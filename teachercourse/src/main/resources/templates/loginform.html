@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1 style="color:blue" >WelCome To Login Page</h1>
+</head>
+<body>
+
+<form action="#" th:action="@{/processstudent}" th:object="${student}"
+      method="post">
+    <input type="hidden" th:field="*{id}"/>
+
+    Name: <input type="text" th:field="*{name}"/>
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span><br/>
+
+    Scoure: <input type="text" th:field="*{scour}"/>
+    <span th:if="${#fields.hasErrors('scour')}" th:errors="*{scour}"></span><br/>
+
+    Grade: <input type="text" th:field="*{grade}"/>
+    <span th:if="${#fields.hasErrors('grade')}" th:errors="*{grade}"></span><br/>
+
+    <input type="submit" value="Submit"/>
+></form>
+</body>
+</html>
